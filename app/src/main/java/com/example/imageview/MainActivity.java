@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
@@ -29,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.constraintLayout1);
         bg.setBackgroundColor(Color.BLUE);
         bg.setBackgroundResource(R.drawable.bg2);
+
+        // random background
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(R.drawable.bg);
+        arrayList.add(R.drawable.bg2);
+        arrayList.add(R.drawable.bg3);
+        Random random = new Random();
+        int vitri = random.nextInt(arrayList.size());
+        bg.setBackgroundResource(arrayList.get(vitri));
 
         // checkbox
         CheckBox ck1 = (CheckBox) findViewById(R.id.checkBox1);

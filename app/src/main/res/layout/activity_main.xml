@@ -87,7 +87,8 @@
                 android:id="@+id/switch1"
                 android:layout_width="107dp"
                 android:layout_height="38dp"
-                android:text="Wifi" />
+                android:text="Wifi"
+                android:textColor="#FEFEFE" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -114,7 +115,8 @@
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Background 1" />
+                android:text="Background 1"
+                android:textColor="#FEFEFE" />
 
             <Space
                 android:layout_width="wrap_content"
