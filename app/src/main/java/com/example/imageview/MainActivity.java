@@ -1,10 +1,13 @@
 package com.example.imageview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -21,23 +24,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.imageView = (ImageView) this.findViewById(R.id.imageView);
+        // background
+        ConstraintLayout bg = (ConstraintLayout)
+                findViewById(R.id.constraintLayout1);
+        bg.setBackgroundColor(Color.BLUE);
+        bg.setBackgroundResource(R.drawable.bg2);
 
-        this.button1 = (Button) this.findViewById(R.id.button1);
-        this.button2 = (Button) this.findViewById(R.id.button2);
+        // checkbox
+        CheckBox ck1 = (CheckBox) findViewById(R.id.checkBox1);
+        ck1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bg.setBackgroundResource(R.drawable.bg3);
+                } else {
+                    bg.setBackgroundResource(R.drawable.bg2);
+                }
+            }
+        });
 
         //switch
         Switch sw = (Switch) findViewById(R.id.switch1);
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){ //isChecked = true
-                    Toast.makeText(MainActivity.this,"Wifi đang bật",Toast.LENGTH_LONG).show();}
-                else{
-                    Toast.makeText(MainActivity.this,"Wifi đang tắt", Toast.LENGTH_LONG).show();
+                if (isChecked) { //isChecked = true
+                    Toast.makeText(MainActivity.this, "Wifi đang bật", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Wifi đang tắt", Toast.LENGTH_LONG).show();
                 }
             }
         });
+
+        // image + button
+        this.imageView = (ImageView) this.findViewById(R.id.imageView);
+
+        this.button1 = (Button) this.findViewById(R.id.button1);
+        this.button2 = (Button) this.findViewById(R.id.button2);
 
         this.button1.setOnClickListener(new Button.OnClickListener() {
 
