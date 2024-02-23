@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
-    android:id="@+id/constraintLayout1"
-    >
+    android:background="@drawable/bg2">
 
     <ImageView
         android:id="@+id/imageView"
@@ -117,6 +116,35 @@
                 android:layout_weight="1"
                 android:text="Background 1"
                 android:textColor="#FEFEFE" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="43dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="Change BG"
+                android:textColor="#FEFEFE"
+                android:textColorHint="#3F51B4" />
 
             <Space
                 android:layout_width="wrap_content"

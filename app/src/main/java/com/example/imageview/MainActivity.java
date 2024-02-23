@@ -33,6 +33,19 @@ public class MainActivity extends AppCompatActivity {
         bg.setBackgroundColor(Color.BLUE);
         bg.setBackgroundResource(R.drawable.bg2);
 
+        //switch
+        Switch sw2 = (Switch) findViewById(R.id.switch2);
+        sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) { //isChecked = true
+                    bg.setBackgroundResource(R.drawable.bg3);
+                } else {
+                    bg.setBackgroundResource(R.drawable.bg2);
+                }
+            }
+        });
+
         // random background
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(R.drawable.bg);
